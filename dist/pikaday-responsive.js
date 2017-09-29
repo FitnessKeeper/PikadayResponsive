@@ -47,7 +47,8 @@
     classes: "",
     placeholder: "Select a date",
     pikadayOptions: {},
-    dayOffset: 0
+    dayOffset: 0,
+    attributes: ""
   };
 
   return function(el, options) {
@@ -86,7 +87,7 @@
       }
       $el.after($input);
 
-      $display = $("<input type='text' readonly='readonly' class='pikaday__display pikaday__display--native " + settings.classes + "' placeholder='" + settings.placeholder + "' />");
+      $display = $("<input type='text' readonly='readonly' class='pikaday__display pikaday__display--native " + settings.classes + "' placeholder='" + settings.placeholder + "' " + settings.attributes + "/>");
       $el.after($display);
 
       $input.on("change", function() {
@@ -120,7 +121,7 @@
 
     } else {
       // Use Pikaday
-      $input = $("<input type='text' class='pikaday__display pikaday__display--pikaday " + settings.classes + "' placeholder='" + settings.placeholder + "' />");
+      $input = $("<input type='text' class='pikaday__display pikaday__display--pikaday " + settings.classes + "' placeholder='" + settings.placeholder + "' " + settings.attributes + "/>");
       if (originalId) {
         $input.attr('id', originalId + '-input');
       }
